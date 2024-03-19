@@ -19,8 +19,5 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ### Deployment
 
-vercel https://lucidity-task.vercel.app/
+[Vercel Deployment](https://lucidity-task.vercel.app/)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
