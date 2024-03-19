@@ -26,7 +26,7 @@ export default function ListContainer({ inventoryData, isLoading, viewId }) {
   if (isLoading) return <></>;
   const productListData = inventoryData?.data?.data || [];
   const last_index = productListData.length ? productListData.length - 1 : 0;
-  alert(last_index)
+  
   return (<>
     <ListWrapper>
       <ListInstance listType={"header"} />
