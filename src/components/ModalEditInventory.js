@@ -27,9 +27,11 @@ export default function ModalEditInventory({ data }) {
     let value_new = value;
     let total_value = productData.value;
 
-    if (name === 'quantity') {
-      value = parseFloat(value);
+    if (name === 'quantity' && value) {
+      value_new = parseInt(value);
+
     }
+
     if (name === 'price' && !value) {
       value_new = `$${value}`
     }
@@ -37,12 +39,17 @@ export default function ModalEditInventory({ data }) {
       value_new = `$${value}`
     }
 
-    if (name === 'price') {
+    if (name === 'price' && !isNaN(parseFloat(value_new?.slice(1)))) {
       total_value = `$${parseFloat(value?.slice(1) || 0) * parseInt(productData.quantity)}`;
     }
 
-    if (name === 'quantity') {
-      total_value = `$${parseFloat(productData.price?.slice(1) || 0) * parseInt(value)}`;
+    if (name === 'quantity' && !isNaN(value_new)) {
+      if (value) {
+        total_value = `$${parseFloat(productData.price?.slice(1) || 0) * parseInt(value_new)}`;
+
+      } else if (!value || value_new === "$" || value_new === '$0') {
+        total_value = `$0`;
+      }
     }
     setProductData(state => ({ ...state, [name]: value_new, value: total_value }))
   }

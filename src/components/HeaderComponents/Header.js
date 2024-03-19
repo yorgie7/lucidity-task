@@ -8,7 +8,7 @@ const USER = "USER";
 const ADMIN = "ADMIN";
 
 
-export default function Header({ data }) {
+const Header = ({ data }) => {
   const dispatch = useDispatch();
 
   const inventoryData = useSelector(state => state?.inventoryData);
@@ -23,7 +23,7 @@ export default function Header({ data }) {
   return (<Wrapper>
     <ActionWrapper>
       <ModeName active={!isAdminActive} >{"User"}</ModeName>
-      <RadioActionWrapper active={true} >
+      <RadioActionWrapper>
 
         <Button active={!isAdminActive} onClick={handleMode(USER)}>
         </Button>
@@ -37,6 +37,8 @@ export default function Header({ data }) {
   </Wrapper>
   )
 }
+
+export default React.memo(Header);
 
 const Wrapper = styled.div`
 display: flex;
