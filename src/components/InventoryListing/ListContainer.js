@@ -28,7 +28,7 @@ export default function ListContainer({ inventoryData, isLoading, viewId }) {
   const last_index = productListData.length ? productListData.length - 1 : 0;
   
   return (<>
-    <ListWrapper> ``
+    <ListWrapper> 
       <ListInstance listType={"header"} />
       {productListData?.map((el, i) => {
         const isDisable = viewId && viewId !== el?.id;

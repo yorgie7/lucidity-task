@@ -9,7 +9,6 @@ export default function WidgetCard({ value, title, id }) {
     <CardWrapper>
       {/* </IconWrapperParent> */}
 
-
       <FlexDiv>
         <IconWrapper>
           <img src={Icon} height={25} width={25} alt={''} />
